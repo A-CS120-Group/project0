@@ -5,7 +5,7 @@ class Application : public juce::JUCEApplication {
 public:
     Application() = default;
 
-    const juce::String getApplicationName() override { return "Part1"; }
+    const juce::String getApplicationName() override { return "Project0"; }
     const juce::String getApplicationVersion() override { return "1.0.0"; }
 
     void initialise(const juce::String &) override { mainWindow = new MainWindow(getApplicationName(), new MainContentComponent, *this); }
