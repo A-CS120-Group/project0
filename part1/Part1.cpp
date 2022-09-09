@@ -88,8 +88,8 @@ void MainContentComponent::getNextAudioBlock(const AudioSourceChannelInfo &buffe
             int freq2 = 10000;
             float amp = 1;
             double sampleRate = this->getSampleRate();
-            float dPhasePerSample1 = PI * 2.0f * ((float) freq1 / (float) sampleRate);
-            float dPhasePerSample2 = PI * 2.0f * ((float) freq2 / (float) sampleRate);
+            float dPhasePerSample1 = (float)(PI * 2.0 * ((double) freq1 / (double) sampleRate));
+            float dPhasePerSample2 = (float)(PI * 2.0 * ((double) freq2 / (double) sampleRate));
             float initPhase = 0;
 
             for (int i = 0; i < buffer->getNumSamples(); i++) {
