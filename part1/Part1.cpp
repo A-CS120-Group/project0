@@ -88,8 +88,8 @@ void MainContentComponent::getNextAudioBlock(const AudioSourceChannelInfo &buffe
             int freq2 = 10000;
             float amp = 1;
             double sampleRate = this->getSampleRate();
-            float dPhasePerSample1 = (float)(PI * 2.0 * ((double) freq1 / (double) sampleRate));
-            float dPhasePerSample2 = (float)(PI * 2.0 * ((double) freq2 / (double) sampleRate));
+            auto dPhasePerSample1 = (float) (PI * 2.0 * ((double) freq1 / (double) sampleRate));
+            auto dPhasePerSample2 = (float) (PI * 2.0 * ((double) freq2 / (double) sampleRate));
             float initPhase = 0;
 
             for (int i = 0; i < buffer->getNumSamples(); i++) {
@@ -98,6 +98,7 @@ void MainContentComponent::getNextAudioBlock(const AudioSourceChannelInfo &buffe
         }
     }
 
+    const MessageManagerLock mmLock;
     switch (status) {
         case 0:
             titleLabel.setText("Part1", juce::NotificationType::dontSendNotification);
